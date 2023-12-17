@@ -17,7 +17,16 @@
 <div id="app"></div>
 
 <script type="text/babel">
-    const Person = ({name, year, photo}) => {
+    const Header = ({logo}) => {
+        return (
+            <>
+                <a href="https://www.kinopoisk.ru/" target="_blank"><img src={logo} alt="logo"/></a>
+                <h1 className="mx-auto">Movie Browser</h1>
+            </>
+        )
+    };
+
+    const Movie = ({name, year, photo}) => {
         return (
             <div className="card col-2">
                 <img src={photo} alt={`Photo of ${name}`} />
@@ -31,11 +40,16 @@
 
     const container = document.getElementById("app");
     const app = (
-        <div className="d-flex justify-content-around">
-            <Person name="Terminator 2" year="1991" photo="https://obs.line-scdn.net/r/musicjp/c/c0334192b5129t0e643b9f/v256x256" />
-            <Person name="The Shawshank Redemption" year="1994" photo="https://avatars.mds.yandex.net/i?id=1504da7ef8732880044cccd11fd94036-5133450-images-thumbs&n=13" />
-            <Person name="The Green Mile" year="1999" photo="https://avatars.mds.yandex.net/i?id=fb3354980a1fb37b1eef3f8995964285-5319263-images-thumbs&n=13" />
-        </div>
+        <>
+            <header className="d-flex align-items-center">
+                <Header logo="https://avatars.mds.yandex.net/i?id=b99535c5f4670eca83257edff79ddd599eae26f0-9866196-images-thumbs&n=13" />
+            </header>
+            <main className="d-flex justify-content-around">
+                <Movie name="Terminator 2" year="1991" photo="https://obs.line-scdn.net/r/musicjp/c/c0334192b5129t0e643b9f/v256x256" />
+                <Movie name="The Shawshank Redemption" year="1994" photo="https://avatars.mds.yandex.net/i?id=1504da7ef8732880044cccd11fd94036-5133450-images-thumbs&n=13" />
+                <Movie name="The Green Mile" year="1999" photo="https://avatars.mds.yandex.net/i?id=fb3354980a1fb37b1eef3f8995964285-5319263-images-thumbs&n=13" />
+            </main>
+        </>
     );
     ReactDOM.createRoot(container).render(app);
 </script>
