@@ -30,7 +30,7 @@
         return (
             <>
                 <li className="nav-item">
-                    <a className="nav-link" href={link} target="_blank">{name}</a>
+                    <a className="nav-link px-0" href={link} target="_blank">{name}</a>
                 </li>
             </>
         )
@@ -38,7 +38,7 @@
 
     const Movie = ({name, year, photo}) => {
         return (
-            <div className="card col-2">
+            <div className="card col-3">
                 <img src={photo} alt={`Photo of ${name}`}/>
                 <div className="card-body">
                     <h5 className="card-title">{name}</h5>
@@ -70,22 +70,25 @@
                 <Header
                     logo="https://avatars.mds.yandex.net/i?id=b99535c5f4670eca83257edff79ddd599eae26f0-9866196-images-thumbs&n=13"/>
             </header>
-            <nav>
-                <ul className="nav bg-warning bg-gradient d-flex justify-content-center my-3">
-                    <Navigation link="https://en.wikipedia.org/wiki/Terminator_2:_Judgment_Day" name="Terminator 2"/>
-                    <Navigation link="https://en.wikipedia.org/wiki/The_Shawshank_Redemption"
-                                name="The Shawshank Redemption"/>
-                    <Navigation link="https://en.wikipedia.org/wiki/The_Green_Mile_(film)" name="The Green Mile"/>
-                </ul>
-            </nav>
-            <main className="d-flex justify-content-between px-5">
-                <Movie name="Terminator 2" year="1991"
-                       photo="https://obs.line-scdn.net/r/musicjp/c/c0334192b5129t0e643b9f/v256x256"/>
-                <Movie name="The Shawshank Redemption" year="1994"
-                       photo="https://avatars.mds.yandex.net/i?id=1504da7ef8732880044cccd11fd94036-5133450-images-thumbs&n=13"/>
-                <Movie name="The Green Mile" year="1999"
-                       photo="https://avatars.mds.yandex.net/i?id=fb3354980a1fb37b1eef3f8995964285-5319263-images-thumbs&n=13"/>
-            </main>
+            <div className="d-flex mt-3">
+                <nav>
+                    <ul className="nav bg-warning bg-gradient d-flex flex-column ps-5 pe-2">
+                        <Navigation link="https://en.wikipedia.org/wiki/Terminator_2:_Judgment_Day"
+                                    name="Terminator 2"/>
+                        <Navigation link="https://en.wikipedia.org/wiki/The_Shawshank_Redemption"
+                                    name="The Shawshank Redemption"/>
+                        <Navigation link="https://en.wikipedia.org/wiki/The_Green_Mile_(film)" name="The Green Mile"/>
+                    </ul>
+                </nav>
+                <main className="d-flex justify-content-between px-5 col-10">
+                    <Movie name="Terminator 2" year="1991"
+                           photo="https://obs.line-scdn.net/r/musicjp/c/c0334192b5129t0e643b9f/v256x256"/>
+                    <Movie name="The Shawshank Redemption" year="1994"
+                           photo="https://avatars.mds.yandex.net/i?id=1504da7ef8732880044cccd11fd94036-5133450-images-thumbs&n=13"/>
+                    <Movie name="The Green Mile" year="1999"
+                           photo="https://avatars.mds.yandex.net/i?id=fb3354980a1fb37b1eef3f8995964285-5319263-images-thumbs&n=13"/>
+                </main>
+            </div>
             <footer className="d-flex justify-content-between bg-warning bg-gradient px-5 py-3 mt-auto">
                 <Footer/>
             </footer>
